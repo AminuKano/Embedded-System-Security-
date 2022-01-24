@@ -11,9 +11,9 @@ This workshop will approximately last 3 hours and aims to introduce embedded sys
 
 To understand the principles of Embedded System Security through the completion of the following tasks:
 
-*	Build an Xbee network, consisting of sender and receiver nodes (P2P).
+*	Build an Xbee network, consisting of sender and receiver nodes.
 *	Configure security settings on the Xbee network.
-*	Build a LoRa network, consisting of sender and receiver nodes (P2P).
+*	Build a LoRa network, consisting of sender and receiver nodes.
 *	Convert the LoRa system into LoRaWAN and configure the security settings.
 *	Attempt to disrupt Xbee/LoRa network traffic using Denial of Service methods.
 *	Attempt to capture Xbee/LoRa traffic using eavesdropping methods.
