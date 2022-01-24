@@ -44,7 +44,7 @@ Software
 *	Arduino IDE - https://www.arduino.cc/en/software
 *	XCTU Xbee Configuration - https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu
 *	Python + Pip - https://www.python.org/downloads/
-*	GNU Radio Companion – LINK TO HACKRF SETUP GUIDE
+*	GNU Radio Companion – https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/HackRF%20Setup%20(main).docx
 
 ## [Brief Introduction to Embedded Systems (10 Minutes)]()
  * Brief Introduction to Embedded Systems
