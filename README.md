@@ -25,7 +25,7 @@ The tutorial will present you on how to build two different embedded systems and
 
 ## Requirements 
 
-Students would be required to access a computer system, internet connectivity, and access privilege to download and install applications during the session. The following list contains the equipment required to complete all of the tasks in this session.
+Students would be required to access a computer system, internet connectivity, and access privilege to download and install applications during the session. The following list contains the equipment required to complete all of the tasks.
 
 Hardware
 *	Digi Xbee Wireless Connectivity Kit (2x Xbee Modules Included)
