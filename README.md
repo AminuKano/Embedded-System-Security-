@@ -1,4 +1,4 @@
-![](https://github.com/CS-Outreach-Session/Network-Security-/blob/main/images/ysj_HIoT.PNG)
+![](https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/ysj_HIoT.png)
 # Embedded System Security
 
 Dr Aminu Usman
@@ -9,7 +9,7 @@ This workshop will approximately last 3 hours and aims to introduce embedded sys
 
 ## Learning Objectives
 
-To understand the principles of Embedded System Security through completing the following tasks:
+To understand the principles of Embedded System Security through the completion of the following tasks:
 
 *	Build an Xbee network, consisting of sender and receiver nodes (P2P).
 *	Configure security settings on the Xbee network.
@@ -46,11 +46,11 @@ Software
 *	Python + Pip - https://www.python.org/downloads/
 *	GNU Radio Companion – LINK TO HACKRF SETUP GUIDE
 
-## [Brief Introduction to Embedded Systems (10 Minutes)](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/Creating%20a%20Rogue%20Wi-Fi%20Access%20Point)
+## [Brief Introduction to Embedded Systems (10 Minutes)]()
  * Brief Introduction to Embedded Systems
  
   
-## [Activity 1 - XBee System Setup & Security Audit (1 Hour 20 Minutes)](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/Simulating%20network%20attacks%20using%20Shark%20Jack%20and%20Packet%20Squirrel)
+## [Activity 1 - XBee System Setup & Security Audit (1 Hour 20 Minutes)]()
 * XBee Network Setup
 * Sensor Installation
 * XBee Packet Sniffing
@@ -58,10 +58,10 @@ Software
 * HackRF Signal Jammer and Replay Attack on XBee
 
 
-## [Activity 2 - Bluetooth System Setup & Security Audit (40 Minutes)](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/Packet%20Sniffing)
+## [Activity 2 - Bluetooth System Setup & Security Audit (40 Minutes)]()
 
 
-## [Activity 3 - LoRa System Setup & Security Audit (Time: 40 Minutes)](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/Firewalls)
+## [Activity 3 - LoRa System Setup & Security Audit (Time: 40 Minutes)]()
 * LoRa Network Setup
 * Sensor Installation
 * LoRa Default Network Security Testing
