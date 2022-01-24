@@ -16,5 +16,5 @@ To prevent attacks on embedded systems, these conditions should be followed:
 *	Allow integration with third-party security management systems.
 
 <p align="center" width="100%">
-    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/security-intro.PNG">
+    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/security-intro.PNG">
 </p>
