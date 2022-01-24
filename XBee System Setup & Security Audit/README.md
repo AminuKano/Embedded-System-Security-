@@ -1,21 +1,21 @@
-## XBee Network Setup
+# XBee Network Setup
 
-* To begin developing the Xbee network, you will first have to download and install the XCTU software, which you can find by following [this](https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu) link. If you are stuck on anything regarding this software, have a look at their [user guide](https://www.digi.com/resources/documentation/digidocs/90001458-13/default.htm). When the installation is complete, boot up the application and you should see a similar window to the one below.
+* To begin the XBee network development, you will first have to download and install the XCTU software, which you can find by following [this](https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu) link. If you are stuck on anything regarding this software, have a look at their [user guide](https://www.digi.com/resources/documentation/digidocs/90001458-13/default.htm). When the installation is complete, boot up the application and you should see a similar window to the one below.
 
 <p align="center" width="100%">
-    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_1.PNG">
+    <img width="50%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_1.PNG">
 </p>
 
 * The next step is to connect your Xbee modules to the development boards which you can find in the Digi kits. Install the Xbee by lining up the pins to the slots, on the top section of the board. To power your device, connect it to a computer via USB-B cable. If prompted with the installation of any drivers, please accept.
 
 <p align="center" width="100%">
-    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_2.PNG">
+    <img width="50%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_2.PNG">
 </p>
 
 * After powering up the devices, go back to your XCTU application and click the Discover Modules button, located in the top left of the window.
 
 <p align="center" width="100%">
-    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_3.PNG">
+    <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_3.PNG">
 </p>
 
 * In the first window click Select All to ensure all ports will be scanned, then click next. Keep all the port parameters set to default and click finish to begin the scan.
@@ -23,13 +23,13 @@
 * After a couple of seconds, the application should have identified the two plugged in Xbee’s, select them, and click the Add selected devices button.
 
 <p align="center" width="100%">
-    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_4.PNG">
+    <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_4.PNG">
 </p>
 
 * The next section’s objective is to achieve communication in transparent mode, between the two XBees. With both the devices discovered in XCTU, select the top one from the list and load the default firmware settings.
 
 <p align="center" width="100%">
-    <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_5.PNG">
+    <img width="30%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_5.PNG">
 </p>
 
 * In the configurations, certain parameters must be updated to make sure that the Xbee’s are on the same channel and can identify each other. Use the table below to guide you through configuration.
@@ -88,12 +88,12 @@
 
 * With Python and Pip setup, install the XBee library by running the following commands.
 
-  ``pip install pyserial``
-  ``pip install srp``
-  ``pip install digi-xbee``
+  ``pip install pyserial``<br>
+  ``pip install srp``<br>
+  ``pip install digi-xbee``<br>
 
 <p align="center" width="100%">
-    <img width="30%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_11.PNG">
+    <img width="20%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_11.PNG">
 </p>
 
 * Open a Python IDE and copy the code from [this GitHub repository](https://github.com/ysj-HIoT/embedded-system-security/blob/master/XBee/Python%20Remote%20IO/XBee-Remote.py). Before running the program, make sure that the variable PORT is set to the COM of your XBEE_A. You can check this by using the XCTU application. 
@@ -104,20 +104,20 @@
     <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_12.PNG">
 </p>
 
-## XBee Security
+# XBee Security
 
-XBee technology is one of the most utilised low powered WAN networks in the world of IoT. The implementation of XBee can appear in home security, streetlights, power plants, agriculture and more. All these sectors are dependent on data communication and can have extreme consequences if exploited. This technology’s popularity is mainly due to its flexible star/mesh topology and electronic reliability, however like any wireless device it has multiple vulnerabilities. 
+XBee technology is one of the most utilised low powered WAN network in the world of IoT. The implementation of XBee can appear in home security, streetlights, power plants, agriculture and more. All these sectors are dependent on data communication and can have extreme consequences if exploited. This technology’s popularity is mainly due to its flexible star/mesh topology and electronic reliability, however like any wireless device it has multiple vulnerabilities. 
 
-This section will explore the different vulnerabilities, and security configurations that need to be applied. Without any set up at all, the devices will communicate in plain text, while publicly visible. Remote XBee shows how this can be abused.
+This section will explore the different existing XBee vulnerabilities, as well as the security configurations that need to be applied to prevent security breaches. Without any set up at all, the devices will communicate in plain text, publicly visible. The following sections display how this can be utilised by an attacker.
 
-# Packet Sniffer
+## Packet Sniffer
 
 Packet sniffing is a method where network payloads are detected, captured, and observed. It is used by administrators to monitor and fix their system, and attackers performing cybersecurity breaches. 
 
 * To capture Zigbee packets, the CC2531 USB evaluation kit will be used. Before connecting the USB stick, you will first need to download and install the drivers; head to [this site](https://www.ti.com/tool/PACKET-SNIFFER) and begin the download.
 
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_13.PNG">
+    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_13.PNG">
 </p>
 
 * Open the downloaded file and start the Setup_SmartRF_Packet_Sniffer_x.xx.x.exe.
@@ -131,7 +131,7 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 * If not already on the desktop or taskbar, use the windows search bar to find the Packet Sniffer application. Select the IEEE 802.15.4/ZigBee protocol and press the start button. You should have the following window open.
 
 <p align="center" width="100%">
-    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_15.PNG">
+    <img width="50%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_15.PNG">
 </p>
 
 * Before starting the scan, make sure that the correct Capturing Device and channel is set in the Radio Configuration tab.
@@ -159,7 +159,7 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 * The packet leaks more critical information, which will later allow us to connect another device to the network. The network ID and the XBee MAC addresses are revealed in the Dest. PAN, Dest. Address, and Source Address fields.
 
 <p align="center" width="100%">
-    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_19.PNG">
+    <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_19.PNG">
 </p>
 
 * Save the details you have captured, you will neex them in the following section.
@@ -177,7 +177,7 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 * With the remote XBee connected, it is possible that it is already on the same network as the other devices, you can test this by first switching to the API mode.
 
 <p align="center" width="100%">
-    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_21.PNG">
+    <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_21.PNG">
 </p>
 
 * When the configuration is successfully uploaded, begin scanning for remote devices.
@@ -189,13 +189,13 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 * If the scan failed to find any devices, the make sure that the Channel and ID settings are the same as XBee_A/B, which you should have captured in the Packet Sniffer section.
 
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_23.PNG">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_23.PNG">
 </p>
 
 * At this stage, you will be able to configure the remote device’s settings using AT commands, which the GUI simplifies. 
 
 <p align="center" width="100%">
-    <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_24.PNG">
+    <img width="30%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_24.PNG">
 </p>
 
 * Before editing anything, return to your main network’s XCTU application, using the console create a packet which sends a simple “test” message from XBEE_A to XBEE_B. Deploy this packet in an infinite sequence, with an interval of 5000ms.
@@ -207,7 +207,7 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 * You can confirm the results in the console window. Similarly, the ID could be edited to disconnect the device from the current network.
 
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_25.PNG">
+    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_25.PNG">
 </p>
 
 ## Security Configuration
