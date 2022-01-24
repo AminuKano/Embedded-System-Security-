@@ -40,7 +40,7 @@ Hardware
 *	Ubertooth One 2.4 GHz Duck Antenna
 
 Software
-*	Github Repository - https://github.com/norbertdajnowski/embedded-system-security
+*	Github Repository - https://github.com/ysj-HIoT/embedded-system-security
 *	Arduino IDE - https://www.arduino.cc/en/software
 *	XCTU Xbee Configuration - https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu
 *	Python + Pip - https://www.python.org/downloads/
