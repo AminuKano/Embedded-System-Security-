@@ -212,7 +212,88 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 
 ## Security Configuration
 
+* To protect the packet data and node visibility, AES encryption should be set up using the XCTU application.
 
+* First, on the XBEE_B, head to configuration and enable AES Encryption. The other setting you must change is the AES Encryption Key which for this example will be:
 
+    ``“AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA” (allowed range of 0-32 bit)``
+    
+<p align="center" width="100%">
+    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_26.PNG">
+</p>
 
+* Repeat the steps on XBEE_A and attempt to communicate using the console again, you should have the same results as before.
 
+* However, if you return to the remote XBEE_C, there you should no longer be able to see any nearby devices, even with the correct network settings.
+
+* Packet sniffing will result in the capture of AES encrypted packets as well, ensuring that transmitted data is safe from eavesdropping.
+
+## Hack RF
+
+The HackRF One is a wide band software defined radio that can receive and transmit a frequency range of 1MHz to 6GHz. To program the HackRF One, we use a software known as GNU radio companion which is a front-end graphical user interface that allows us to create python programs simply by using blocks to create flowcharts.
+
+Signal jamming and a replay attack will be demonstrated, to show how a Zigbee network can be disrupted using a software-defined radio. Before continuing with the tutorials, you will have to setup the Hack RF and the software, using the separate document “HackRF Setup (main)”. If for any reason the first setup does not work, try the backup setup.
+
+The Wireless Telegraphy Act 2006 states that using any apparatus for the purpose of interfering with wireless communication is illegal, even in a controlled environment. Therefore, these tutorials have been developed to show the GNU Radio Companion designs, but they are not meant to be executed.
+
+### Signal Jammer / Noise Source
+
+* Firstly, you must identify the channel frequency that your Xbees are communicating over.
+
+* Going back into the configuration tab, look for the CH setting and take a note of it. Use the below table to match the channel ascii to the hex column, that should give you the correct frequency.
+
+<p align="center" width="100%">
+    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_27.PNG">
+</p>
+
+* In my example the channel is “C” and the frequency is 2.410GHz. Going back to the GNU Radio Companion, copy the below diagram, and change the target_freq so that it matches the one you identified.
+
+    <i>Tip: use ctrl + f to search through the functions faster</i>
+    
+<p align="center" width="100%">
+    <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_28.PNG">
+</p>
+
+* On compile the GNU Companion converts the diagram into a Python program; using the HackRF it creates noise around our targeted frequency.
+
+* Assuming the amplitude is adequate, and no signal jamming protection is present, this program will interfere Zigbee communication.
+
+### Replay Attack
+
+Another method for the offensive use of SDRs on Zigbee embedded systems is replaying captured signals. A replay attack occurs when a cybercriminal eavesdrops on a secure network communication, intercepts it, and then fraudulently delays or resends it to misdirect the receiver into doing what the hacker wants. The added danger of replay attacks is that a hacker doesn't even need advanced skills to decrypt a message after capturing it from the network. The attack could be successful simply by resending the whole thing.
+
+* You can either follow the tutorial or try to implement the solution [from github yourself](https://github.com/norbertdajnowski/embedded-system-security/tree/master/XBee/replay-attack). 
+
+* Create a new folder where you will store the input and output GRC files and the captured recording of XBee’s communication. 
+
+* Open a new GRC file and call it replay-input.grc. Copy the diagram from below, making sure to use the same target frequency as before.
+
+<p align="center" width="100%">
+    <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_29.PNG">
+</p>
+
+* In the folder that you’ve just created, create a new file, and make sure that it ends with the .dll filetype; set the File Sink’s path to the new .dll.
+
+* Back inside the XCTU, make sure both the XBee’s are in transparent modes and switch to the console tab. Create a new packet filled with the repeating characters “A” and make sure its couple hundred bytes in size.
+
+<p align="center" width="100%">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_30.PNG">
+</p>
+
+* Click add packet and return to GNU Radio Companion, compile your input diagram, and execute it.
+
+* All the signals on XBee’s frequency will be recorded by the HackRF when the new window pops up. Quickly send the packet through the XCTU application and end the SDR program to stop the recording.
+
+* If the recording happened to have a lot of white noise, then you can try it again since the program will just overwrite the file.
+
+* You should now have the recording of the XBee packet saved, the next step is to create the replay-output diagram. Use the image below and make sure your frequency and file path are adjusted.
+
+<p align="center" width="100%">
+    <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_31.PNG">
+</p>
+
+* When ready, compile and run this program while monitoring the XBee through XCTU. If successful, you should have received the recorded packet from the SDR, with the XBEE_A believing that it has come from XBEE_B.
+
+<p align="center" width="100%">
+    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_32.PNG">
+</p>
