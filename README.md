@@ -46,7 +46,7 @@ Software
 *	Python + Pip - https://www.python.org/downloads/
 *	GNU Radio Companion – https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/HackRF%20Setup%20(main).docx
 
-## [Brief Introduction to Embedded Systems (10 Minutes)]()
+## [Brief Introduction to Embedded Systems (10 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/Embedded-System-Intro)
  * Brief Introduction to Embedded Systems
  
   
