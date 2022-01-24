@@ -5,7 +5,7 @@ Dr Aminu Usman
 
 ## Plan for today :
 
-* This workshop will approximately last 3 hours and aims to introduce embedded systems, and their security features. In particular the use of XBee, Bluetooth, and LoRa networking in Embedded System applications.
+This workshop will approximately last 3 hours and aims to introduce embedded systems, and their security features. In particular the use of XBee, Bluetooth, and LoRa networking in Embedded System applications.
 
 ## Learning Objectives
 
@@ -28,26 +28,26 @@ The tutorial will present you on how to build two different embedded systems and
 Students would be required to access a computer system, internet connectivity, and access privilege to download and install applications during the session. The following list contains the equipment required to complete all of the tasks in this session.
 
 Hardware
-•	Digi Xbee Wireless Connectivity Kit (2x Xbee Modules Included)
-•	MQ-9B Gas Sensor
-•	3x Arduino Uno
-•	Ultrasonic Sensor HC-SR04 (optional)
-•	3x Arduino USB Power Cable
-•	3x Dragino LoRa Shield v1.4
-•	Arduino Pro Gateway LoRa Connectivity Kit
-•	HackRF One
-•	Texas Instruments CC2531 USB Evaluation Kit
-•	Ubertooth One 2.4 GHz Duck Antenna
+*	Digi Xbee Wireless Connectivity Kit (2x Xbee Modules Included)
+*	MQ-9B Gas Sensor
+*	3x Arduino Uno
+*	Ultrasonic Sensor HC-SR04 (optional)
+*	3x Arduino USB Power Cable
+*	3x Dragino LoRa Shield v1.4
+*	Arduino Pro Gateway LoRa Connectivity Kit
+*	HackRF One
+*	Texas Instruments CC2531 USB Evaluation Kit
+*	Ubertooth One 2.4 GHz Duck Antenna
 
 Software
-•	Github Repository - https://github.com/norbertdajnowski/embedded-system-security
-•	Arduino IDE - https://www.arduino.cc/en/software
-•	XCTU Xbee Configuration - https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu
-•	Python + Pip - https://www.python.org/downloads/
-•	GNU Radio Companion – LINK TO HACKRF SETUP GUIDE
+*	Github Repository - https://github.com/norbertdajnowski/embedded-system-security
+*	Arduino IDE - https://www.arduino.cc/en/software
+*	XCTU Xbee Configuration - https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu
+*	Python + Pip - https://www.python.org/downloads/
+*	GNU Radio Companion – LINK TO HACKRF SETUP GUIDE
 
 ## [Brief Introduction to Embedded Systems (10 Minutes)](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/Creating%20a%20Rogue%20Wi-Fi%20Access%20Point)
- * Brief Introduction of Embedded Systems
+ * Brief Introduction to Embedded Systems
  
   
 ## [Activity 1 - XBee System Setup & Security Audit (1 Hour 20 Minutes)](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/Simulating%20network%20attacks%20using%20Shark%20Jack%20and%20Packet%20Squirrel)
@@ -62,8 +62,9 @@ Software
 
 
 ## [Activity 3 - LoRa System Setup & Security Audit (Time: 40 Minutes)](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/Firewalls)
-* About Firewalls
-* Malicious software
-* Network Firewall Virtualisation Exercise
+* LoRa Network Setup
+* Sensor Installation
+* LoRa Default Network Security Testing
+* LoRaWAN Configuration
 
 ## [Extra - Individual Tasks](https://github.com/CS-Outreach-Session/Network-Security-/tree/main/extra)
