@@ -47,10 +47,8 @@ Software
 *	GNU Radio Companion – https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/HackRF%20Setup%20(main).docx
 
 ## [Brief Introduction to Embedded Systems (10 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/Embedded-System-Intro)
- * Brief Introduction to Embedded Systems
  
-  
-## [Activity 1 - XBee System Setup & Security Audit (1 Hour 20 Minutes)]()
+## [Activity 1 - XBee System Setup & Security Audit (1 Hour 20 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/XBee%20System%20Setup%20%26%20Security%20Audit)
 * XBee Network Setup
 * Sensor Installation
 * XBee Packet Sniffing
@@ -60,8 +58,7 @@ Software
 
 ## [Activity 2 - Bluetooth System Setup & Security Audit (40 Minutes)]()
 
-
-## [Activity 3 - LoRa System Setup & Security Audit (Time: 40 Minutes)]()
+## [Activity 3 - LoRa System Setup & Security Audit (Time: 40 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/LoRa%20System%20Setup%20&%20Security%20Audit)
 * LoRa Network Setup
 * Sensor Installation
 * LoRa Default Network Security Testing
