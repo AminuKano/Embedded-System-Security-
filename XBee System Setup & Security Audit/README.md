@@ -26,7 +26,9 @@
     <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_4.PNG">
 </p>
 
-* The next section’s objective is to achieve communication in transparent mode, between the two XBees. With both the devices discovered in XCTU, select the top one from the list and load the default firmware settings.
+### XBee AT Mode
+
+* This section's objective is to achieve communication in transparent mode, between the two XBees. With both the devices discovered in XCTU, select the top one from the list and load the default firmware settings.
 
 <p align="center" width="100%">
     <img width="30%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_5.PNG">
@@ -54,9 +56,9 @@
     <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_8.PNG">
 </p>
 
-* Next we will connect a MQ-9B sensor, responsible for CO and CH4 gas detection, to the XBEE_B.
+### Sensor Installation
 
-* After configuring the XBee’s, a script will be deployed to collect the readings over the network (XBEE_A to XBEE_B). The script will also handle the readings decoding and display.
+An MQ-9B sensor, responsible for CO and CH4 gas detection, will be connected to the XBEE_B. After configuring the XBee’s, a script will be deployed to collect the readings over the network (XBEE_A to XBEE_B). The script will also handle the readings decoding and display.
 
 * To begin with, connect the sensor into the Grove AD2 slot on XBEE_B and power up both the devices. Search for them in the XCTU application and open the configuration panel.
 
@@ -114,6 +116,8 @@ This section will explore the different existing XBee vulnerabilities, as well a
 
 Packet sniffing is a method where network payloads are detected, captured, and observed. It is used by administrators to monitor and fix their system, and attackers performing cybersecurity breaches. 
 
+### Setup
+
 * To capture Zigbee packets, the CC2531 USB evaluation kit will be used. Before connecting the USB stick, you will first need to download and install the drivers; head to [this site](https://www.ti.com/tool/PACKET-SNIFFER) and begin the download.
 
 <p align="center" width="100%">
@@ -134,6 +138,8 @@ Packet sniffing is a method where network payloads are detected, captured, and o
     <img width="50%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_15.PNG">
 </p>
 
+### Capturing Packets
+
 * Before starting the scan, make sure that the correct Capturing Device and channel is set in the Radio Configuration tab.
 
 * Since there are only 16 channels, it would not take very long for an attacker to find the correct one manually, but we already have the right one from the previous XBee setup. In my case the CH is 0x0C (2410 MHz).
@@ -147,6 +153,8 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 <p align="center" width="100%">
     <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_17.PNG">
 </p>
+
+### Evaluating Data
 
 * The first packet is a request by XBee_A for the sensor reading from XBee_B, which is returned in the second packet.
 
@@ -185,6 +193,8 @@ Packet sniffing is a method where network payloads are detected, captured, and o
 <p align="center" width="100%">
     <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_22.PNG">
 </p>
+
+### AT Commands
 
 * If the scan failed to find any devices, the make sure that the Channel and ID settings are the same as XBee_A/B, which you should have captured in the Packet Sniffer section.
 
@@ -251,7 +261,7 @@ The Wireless Telegraphy Act 2006 states that using any apparatus for the purpose
     <i>Tip: use ctrl + f to search through the functions faster</i>
     
 <p align="center" width="100%">
-    <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_28.PNG">
+    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_28.PNG">
 </p>
 
 * On compile the GNU Companion converts the diagram into a Python program; using the HackRF it creates noise around our targeted frequency.
@@ -269,7 +279,7 @@ Another method for the offensive use of SDRs on Zigbee embedded systems is repla
 * Open a new GRC file and call it replay-input.grc. Copy the diagram from below, making sure to use the same target frequency as before.
 
 <p align="center" width="100%">
-    <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_29.PNG">
+    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_29.PNG">
 </p>
 
 * In the folder that you’ve just created, create a new file, and make sure that it ends with the .dll filetype; set the File Sink’s path to the new .dll.
@@ -289,7 +299,7 @@ Another method for the offensive use of SDRs on Zigbee embedded systems is repla
 * You should now have the recording of the XBee packet saved, the next step is to create the replay-output diagram. Use the image below and make sure your frequency and file path are adjusted.
 
 <p align="center" width="100%">
-    <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_31.PNG">
+    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/xbee_31.PNG">
 </p>
 
 * When ready, compile and run this program while monitoring the XBee through XCTU. If successful, you should have received the recorded packet from the SDR, with the XBEE_A believing that it has come from XBEE_B.
