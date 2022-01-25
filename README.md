@@ -58,7 +58,7 @@ Software
 
 ## [Activity 2 - Bluetooth System Setup & Security Audit (40 Minutes)]()
 
-## [Activity 3 - LoRa System Setup & Security Audit (Time: 40 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/LoRa%20System%20Setup%20&%20Security%20Audit)
+## [Activity 3 - LoRa System Setup & Security Audit (40 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/LoRa%20System%20Setup%20&%20Security%20Audit)
 * LoRa Network Setup
 * Sensor Installation
 * LoRa Default Network Security Testing
