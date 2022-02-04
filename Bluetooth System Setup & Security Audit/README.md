@@ -34,8 +34,8 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
 
 * Enter AT which should return OK, as shown in the screenshot below. Use the following commands to make sure the module is set as a receiver and to display its address.
 
-  ``AT``
-  ``AT+ROLE=0``
+  ``AT``<br>
+  ``AT+ROLE=0``<br>
   ``AT+ADDR``
   
 <p align="center" width="100%">
@@ -58,7 +58,7 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
 
 * The next commands will instruct the module to search and connect to nearby compatible Bluetooth devices when launched.
 
-  ``AT+ROLE=1``
+  ``AT+ROLE=1``<br>
   ``AT+CMODE=1``
   
 <p align="center" width="100%">
@@ -109,7 +109,7 @@ Project Ubertooth is an open-source wireless development platform suitable for B
 
 * In the Kali Linux environment, create a new folder for the Ubertooth prerequisites.
 
-  ``mkdir ubertooth-one``
+  ``mkdir ubertooth-one``<br>
   ``cd ubertooth-one``
 
 * install all the required packages.
@@ -123,14 +123,14 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
  
  * Next, you will need to install the Libbtbb library which Ubertooth utilises to decode Bluetooth packets.
 
-  ``wget https://github.com/greatscottgadgets/libbtbb/archive/2020-12-R1.tar.gz -O libbtbb-2020-12-R1.tar.gz``
-  ``tar -xf libbtbb-2020-12-R1.tar.gz``
-  ``cd libbtbb-2020-12-R1``
-  ``mkdir build``
-  ``cd build``
-  ``cmake ..``
-  ``make``
-  ``sudo make install``
+  ``wget https://github.com/greatscottgadgets/libbtbb/archive/2020-12-R1.tar.gz -O libbtbb-2020-12-R1.tar.gz``<br>
+  ``tar -xf libbtbb-2020-12-R1.tar.gz``<br>
+  ``cd libbtbb-2020-12-R1``<br>
+  ``mkdir build``<br>
+  ``cd build``<br>
+  ``cmake ..``<br>
+  ``make``<br>
+  ``sudo make install``<br>
   ``sudo ldconfig``
   
 <p align="center" width="100%">
@@ -139,14 +139,14 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
 
 * When Libbtbb installation is complete, you will have to install the Ubertooth tools next using the following commands.
 
-  ``wget https://github.com/greatscottgadgets/ubertooth/releases/download/2020-12-R1/ubertooth-2020-12-R1.tar.xz``
-  ``tar -xf ubertooth-2020-12-R1.tar.xz``
-  ``cd ubertooth-2020-12-R1/host``
-  ``mkdir build``
-  ``cd build``
-  ``cmake ..``
-  ``make``
-  ``sudo make install``
+  ``wget https://github.com/greatscottgadgets/ubertooth/releases/download/2020-12-R1/ubertooth-2020-12-R1.tar.xz``<br>
+  ``tar -xf ubertooth-2020-12-R1.tar.xz``<br>
+  ``cd ubertooth-2020-12-R1/host``<br>
+  ``mkdir build``<br>
+  ``cd build``<br>
+  ``cmake ..``<br>
+  ``make``<br>
+  ``sudo make install``<br>
   ``sudo ldconfig``
   
 <p align="center" width="100%">
@@ -157,24 +157,24 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
 
 * Use the following instructions in the appropriate folders to complete the plugin installation.
 
-  ``sudo apt-get install wireshark wireshark-dev libwireshark-dev cmake``
-  ``cd libbtbb-2020-12-R1/wireshark/plugins/btbb``
-  ``mkdir build``
-  ``cd build``
-  ``cmake -DCMAKE_INSTALL_LIBDIR=/usr/lib/x86_64-linux-gnu/wireshark/libwireshark3/plugins ..``
-  ``make``
+  ``sudo apt-get install wireshark wireshark-dev libwireshark-dev cmake``<br>
+  ``cd libbtbb-2020-12-R1/wireshark/plugins/btbb``<br>
+  ``mkdir build``<br>
+  ``cd build``<br>
+  ``cmake -DCMAKE_INSTALL_LIBDIR=/usr/lib/x86_64-linux-gnu/wireshark/libwireshark3/plugins ..``<br>
+  ``make``<br>
   ``sudo make install``
   
 <p align="center" width="100%">
     <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_15.PNG">
 </p>
   
-  ``sudo apt-get install wireshark wireshark-dev libwireshark-dev cmake``
-  ``cd libbtbb-2020-12-R1/wireshark/plugins/btbredr``
-  ``mkdir build``
-  ``cd build``
-  ``cmake -DCMAKE_INSTALL_LIBDIR=/usr/lib/x86_64-linux-gnu/wireshark/libwireshark3/plugins ..``
-  ``make``
+  ``sudo apt-get install wireshark wireshark-dev libwireshark-dev cmake``<br>
+  ``cd libbtbb-2020-12-R1/wireshark/plugins/btbredr``<br>
+  ``mkdir build``<br>
+  ``cd build``<br>
+  ``cmake -DCMAKE_INSTALL_LIBDIR=/usr/lib/x86_64-linux-gnu/wireshark/libwireshark3/plugins ..``<br>
+  ``make``<br>
   ``sudo make install``
   
 ### Using the Spectrum Analyser
