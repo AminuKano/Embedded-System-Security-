@@ -17,7 +17,7 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
 * Make sure that the TXD pin goes to TX and RXD to RX, these handle all the communication between the module and the MCU.
 
 <p align="center" width="100%">
-    <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_2.PNG">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_2.PNG">
 </p>
 
 * The Bluetooth device must be launched in AT mode to interact with it. To do so, you will have to press down the small button at the bottom right of the HC-05. Holding onto the button, power on the device, if a red light begins to flash once per every two seconds, then you have successfully launched it in AT mode.
