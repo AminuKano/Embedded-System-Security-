@@ -77,9 +77,9 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
     <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_8.PNG">
 </p>
 
-* In the Arduino IDE, select the port to your Master device and upload [this](https://github.com/norbertdajnowski/embedded-system-security/blob/master/Bluetooth/hc05) code.
+* In the Arduino IDE, select the port to your Master device and upload [this](https://github.com/ysj-HIoT/embedded-system-security/blob/master/Bluetooth/hc05_master/hc05_master.ino) code.
 
-* Then switch to the receiver device and upload [this](https://github.com/norbertdajnowski/embedded-system-security/blob/master/Bluetooth/hc05) code.
+* Then switch to the receiver device and upload [this](https://github.com/ysj-HIoT/embedded-system-security/blob/master/Bluetooth/hc05_slave/hc05_slave.ino) code.
 
 <p align="center" width="100%">
     <img width="50%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_9.PNG">
