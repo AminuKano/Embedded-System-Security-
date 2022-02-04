@@ -2,19 +2,19 @@
 
 ## Bluetooth System Setup
 
-Before we attempt to capture and analyse data passed by Bluetooth, we must setup the communication between the two HC-05 modules. They will be installed and connected to our Arduino MCU, powered up in AT mode and configured into Master to Slave communication.
+Before caputuring and analysing Bluetooth data, you must setup the communication between the two HC-05 modules. They need to be installed and connected to the Arduino MCUs, powered up in AT mode and configured as Master to Slave communication.
 
 ### Slave Node Setup
 
 * The HC-05 module should be installed on a breadboard, but male to female cables would work as well.
 
-* Begin by installing the receiver Bluetooth module, following the circuit design below.
+* Begin by installing the receiver Bluetooth module, copying the circuit design below.
 
 <p align="center" width="100%">
     <img width="100%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_1.PNG">
 </p>
 
-* Make sure that the TXD pin goes to TX and RXD to RX, these handle all the communication between the module and the MCU.
+* Make sure that the TXD pin goes to TX and RXD to RX, these handle all the communication between the Bluetooth module and the MCU.
 
 <p align="center" width="100%">
     <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_2.PNG">
@@ -23,16 +23,16 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
 * The Bluetooth device must be launched in AT mode to interact with it. To do so, you will have to press down the small button at the bottom right of the HC-05. Holding onto the button, power on the device, if a red light begins to flash once per every two seconds, then you have successfully launched it in AT mode.
 
 <p align="center" width="100%">
-    <img width="30%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_3.PNG">
+    <img width="20%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_3.PNG">
 </p>
+
+* Open the serial monitor through the Arduino IDE and change its settings to display Both NL & CR at a baud rate of 38400 (HC-05 AT Mode Default).
 
 <p align="center" width="100%">
     <img width="30%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_4.PNG">
 </p>
 
-* To confirm, open the serial monitor through the Arduino IDE and change its settings to display Both NL & CR at a baud rate of 38400 (HC-05 AT Mode Default).
-
-* Enter AT which should return OK, as shown in the screenshot below. Use the following commands to make sure the module is set as a receiver and to display its address.
+* Enter <i>AT</i>, which should return OK, as shown in the screenshot below. Use the following commands to make sure that the module is set as a receiver and to view its address.
 
   ``AT``<br>
   ``AT+ROLE=0``<br>
@@ -46,7 +46,7 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
 
 * Now that you have the receiver Bluetooth setup, you will need to install the other HC-05 and configure it as a Master Node.
 
-* Follow the same steps and circuit design as before to install the new module, this can be done on the same breadboard, make sure you don’t cross any wiring between the two Arduinos.
+* Follow the same steps and circuit design as before to install the new module, this can be done on the same breadboard, just make sure you don’t cross any wiring between the two Arduinos.
 
 <p align="center" width="100%">
     <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_6.PNG">
@@ -56,22 +56,16 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
 
   ``AT``
 
-* The next commands will instruct the module to search and connect to nearby compatible Bluetooth devices when launched.
+* The next commands instruct the module to search and connect to nearby compatible Bluetooth devices when launched, enter them in the serial monitor.
 
   ``AT+ROLE=1``<br>
   ``AT+CMODE=1``
-  
-<p align="center" width="100%">
-    <img width="30%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_7.PNG">
-</p>
 
 ### Wiring for Bluetooth Communication
 
 * Before you begin transmitting messages, you will have to switch the RX pin to the 3rd Digital Pin, and TX pin to the 2nd Digital Pin on the Arduino.
 
-* This will ensure that the Bluetooth Serial does not disturb the Arduino Serial monitor communication.
-
-* Make sure to do this on both the devices.
+* This will ensure that the Bluetooth Serial does not disturb the Arduino Serial monitor communication. Make sure to do this on both the devices.
 
 <p align="center" width="100%">
     <img width="40%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_8.PNG">
@@ -85,12 +79,12 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
     <img width="50%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_9.PNG">
 </p>
 
-* Now restart both the devices and let them launch normally, after a couple seconds you should notice the Bluetooth LEDs flashing asynchronously every second or two. This confirms that they have made a connection.
+* Restart both the devices and let them launch normally, after a couple seconds you should notice the Bluetooth LEDs flashing asynchronously every second or two. This confirms that they have made a connection.
 
 * Open the Master device’s serial monitor and input “send”, make sure the baud rate is set to 9600 when doing so.
 
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_10.PNG">
+    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_10.PNG">
 </p>
 
 * Open the serial monitor of your receiver device and select the baud rate of 9600, you should see a stream of the ‘t’ character.
@@ -99,7 +93,7 @@ Before we attempt to capture and analyse data passed by Bluetooth, we must setup
     <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_11.PNG">
 </p>
 
-* This confirms that you have made communication between the two devices.
+* This confirms that there is data communication between the two devices.
 
 ## Packet Sniffing with Ubertooth One
 
@@ -107,21 +101,20 @@ Project Ubertooth is an open-source wireless development platform suitable for B
 
 ### Ubertooth One Installation
 
-* In the Kali Linux environment, create a new folder for the Ubertooth prerequisites.
+* In Kali Linux environment, create a new folder for the Ubertooth prerequisites.
 
   ``mkdir ubertooth-one``<br>
   ``cd ubertooth-one``
 
-* install all the required packages.
+* Install all the required packages.
 
-  ``sudo apt install cmake libusb-1.0-0-dev make gcc g++ libbluetooth-dev wget \
-pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
+  ``sudo apt install cmake libusb-1.0-0-dev make gcc g++ libbluetooth-dev wget \ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
 
 <p align="center" width="100%">
     <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_12.PNG">
 </p>
  
- * Next, you will need to install the Libbtbb library which Ubertooth utilises to decode Bluetooth packets.
+ * Next, you will need to install the Libbtbb library which Ubertooth requires to decode Bluetooth packets.
 
   ``wget https://github.com/greatscottgadgets/libbtbb/archive/2020-12-R1.tar.gz -O libbtbb-2020-12-R1.tar.gz``<br>
   ``tar -xf libbtbb-2020-12-R1.tar.gz``<br>
@@ -134,10 +127,10 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
   ``sudo ldconfig``
   
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_13.PNG">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_13.PNG">
 </p>
 
-* When Libbtbb installation is complete, you will have to install the Ubertooth tools next using the following commands.
+* When Libbtbb installation is complete, you will have to install the Ubertooth tools using the following commands.
 
   ``wget https://github.com/greatscottgadgets/ubertooth/releases/download/2020-12-R1/ubertooth-2020-12-R1.tar.xz``<br>
   ``tar -xf ubertooth-2020-12-R1.tar.xz``<br>
@@ -150,10 +143,10 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
   ``sudo ldconfig``
   
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_14.PNG">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_14.PNG">
 </p>
 
-* The final installation is a Wireshark plugin, so that we can review the packets later in the section.
+* The final setup installation is the Wireshark plugin, which will help review captured packets later in the tutorial.
 
 * Use the following instructions in the appropriate folders to complete the plugin installation.
 
@@ -166,7 +159,7 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
   ``sudo make install``
   
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_15.PNG">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_15.PNG">
 </p>
   
   ``sudo apt-get install wireshark wireshark-dev libwireshark-dev cmake``<br>
@@ -184,21 +177,21 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
 * First, connect your Ubertooth One device to one of the USB ports.
   
 <p align="center" width="100%">
-    <img width="50%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_16.PNG">
+    <img width="60%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_16.PNG">
 </p>
   
 * Go to the specan_ui python tool in the Ubertooth directory.
 
   ``cd /ubertooth-2020-12-R1/host/python/specan_ui``
   
-* Now run the program using the following command.
+* Run the program using the following command.
 
   ``sudo ubertooth-specan -d -  -l 2400 -u 2483 -U -1``
   
 * It is possible that the program returns a traceback error due to a wrong API implementation by the sip module.
 
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_17.PNG">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_17.PNG">
 </p>
   
 * If that’s the case then run the following command to fix it, otherwise just ignore this step.
@@ -213,7 +206,7 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
 
 * Use <b>cd ..</b> to return to the ubertooth-2020-12-R1 directory.
 
-* Go to the <i>ubertooth-one-firmware-bin</i> directory and use the following commands to flash the Ubertooth One firmware.
+* Go to the <i>ubertooth-one-firmware-bin</i> directory and run:
 
   ``ubertooth-dfu -d bluetooth_rxtx.dfu -r``
   
@@ -222,16 +215,16 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
   ``Sudo ubertooth-specan -d -  -l 2400 -u 2483 -U -1``
   
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_19.PNG">
+    <img width="90%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_19.PNG">
 </p>
 
-* The left screenshot is the output example before launching the Bluetooth devices, and the right is post-launch. Try running your Bluetooth devices as well to see if there are any changes on the spectrum analyser.
+* The left screenshot is the output example before launching the Bluetooth devices, and the right is post-launch. Run your Bluetooth devices while the spectrum analyser is on, see if any changes appear on the graph.
 
 ### LAP Packet Sniffing
 
 * LAP Packet sniffing is another Ubertooth utility, which displays a couple of details (including the LAP value) from the captured Bluetooth packets.
 
-* Make sure that your Bluetooth communication is online and transmitting messages, throughout these next sections.
+* Make sure that your previous Bluetooth communication is online and transmitting messages, throughout these next sections.
 
 * Use ubertooth-rx to launch the packet sniffer.
 
@@ -241,7 +234,7 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
     <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_20.PNG">
 </p>
 
-* Most of these messages contain the same LAP value, most likely it’s the LAP of the Bluetooth device that has been set up.
+* Most of these messages contain the same LAP value, its likely that it is the LAP of the Bluetooth device that has been set up.
 
 ### Wireshark Display
 
@@ -270,12 +263,12 @@ pkg-config python3-numpy python3-qtpy python3-distutils python3-setuptools``
   ``ubertooth-btle -f -c /tmp/pipe``
 
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_22.PNG">
+    <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_22.PNG">
 </p>
 
 * You should expect a similar output to the example above.
 
-* The Wireshark application should display a more organised version of these packets, which you can analyse.
+* The Wireshark application displays a more organised version of these packets and offers tools for analysis.
 
 <p align="center" width="100%">
     <img width="70%" src="https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/bt_23.PNG">
