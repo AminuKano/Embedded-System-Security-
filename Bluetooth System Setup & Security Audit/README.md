@@ -2,7 +2,7 @@
 
 ## Bluetooth System Setup
 
-* Before we attempt to capture and analyse data passed by Bluetooth, we must setup the communication between the two HC-05 modules. They will be installed and connected to our Arduino MCU, powered up in AT mode and configured into Master to Slave communication.
+Before we attempt to capture and analyse data passed by Bluetooth, we must setup the communication between the two HC-05 modules. They will be installed and connected to our Arduino MCU, powered up in AT mode and configured into Master to Slave communication.
 
 ### Slave Node Setup
 
