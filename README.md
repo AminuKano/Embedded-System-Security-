@@ -3,11 +3,7 @@
 
 Dr Aminu Bello Usman
 
-## Plan for today :
-
-This workshop will approximately last 3 hours and aims to introduce embedded systems, and their security features. In particular you will explore the use of XBee, Bluetooth, and LoRa networking in different applications.
-
-## Learning Objectives
+# Overview of the session
 
 To understand the principles of Embedded System Security through the completion of the following tasks:
 
