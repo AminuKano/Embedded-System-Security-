@@ -1,7 +1,7 @@
 ![](https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/ysj_HIoT.png)
 # Embedded System Security
 
-Dr Aminu Usman
+Dr Aminu Bello Usman
 
 ## Plan for today :
 
