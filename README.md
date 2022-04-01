@@ -52,7 +52,11 @@ Software
 * HackRF Signal Jammer and Replay Attack on XBee
 
 
-## [Activity 2 - Bluetooth System Setup & Security Audit (40 Minutes)]()
+## [Activity 2 - Bluetooth System Setup & Security Audit (40 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/Bluetooth%20System%20Setup%20%26%20Security%20Audit)
+* Bluetooth System Setup
+* Packet Sniffing with Ubertooth One
+* Spectrum Analyser
+* Wireshark
 
 ## [Activity 3 - LoRa System Setup & Security Audit (40 Minutes)](https://github.com/CS-Outreach-Session/Embedded-System-Security-/tree/main/LoRa%20System%20Setup%20&%20Security%20Audit)
 * LoRa Network Setup
