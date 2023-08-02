@@ -2,7 +2,6 @@
 
 # Embedded System Security
 
-## Dr Aminu Usman 
 ## Cybersecurity Research Group (CRG)
 ## Department of Computing and Data Science, York St John, University
 
