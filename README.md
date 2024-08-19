@@ -1,7 +1,7 @@
 ![](https://github.com/CS-Outreach-Session/Embedded-System-Security-/blob/main/Images/ysj_HIoT.png)
 
 # Embedded System Security
-
+# Author: Dr Aminu Usman 
 ## Cybersecurity Research Group (CRG)
 ## Department of Computing and Data Science, York St John, University
 
